@@ -1,0 +1,19 @@
+{
+  "name": "clean-architecture-kata",
+  "version": "0.0.1",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "node ./src/index.ts",
+    "test": "node --test"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.19"
+  }
+}
