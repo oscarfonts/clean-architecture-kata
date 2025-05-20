@@ -1,5 +1,5 @@
-import {Email} from './Email.ts';
-import {Password} from './Password.ts';
+import {Email} from '../value-objects/Email.ts';
+import {Password} from '../value-objects/Password.ts';
 
 type UserProps = {
   id: string;
@@ -10,16 +10,22 @@ type UserProps = {
 
 export class User {
   private readonly props: UserProps;
+
   private constructor(props: UserProps) {
     this.props = props;
   }
 
-  static create({id, email, username, password}: {id: string, email: string, username: string, password: string}): User {
+  static create({id, email, username, password}: {
+    id: string,
+    email: string,
+    username: string,
+    password: string
+  }): User {
     return new User({
       id,
       username,
       email: Email.create(email),
-      password: Password.create(password),
+      password: Password.create(password)
     });
   }
 
@@ -28,5 +34,9 @@ export class User {
       return false;
     }
     return this.props.id === user.props.id;
+  }
+
+  getEmail(): Email {
+    return this.props.email;
   }
 }

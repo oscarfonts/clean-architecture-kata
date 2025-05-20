@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import {Password} from '../src/Password.ts';
+import {Password} from '../../../src/domain/value-objects/Password.ts';
 
 test('Password', (t) => {
   t.test('guarda el valor', (t) => {

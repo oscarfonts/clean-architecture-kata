@@ -15,5 +15,8 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.15.19"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4"
   }
 }

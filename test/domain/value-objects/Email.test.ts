@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import {Email} from '../src/Email.ts';
+import {Email} from '../../../src/domain/value-objects/Email.ts';
+
 
 test('Email', (t) => {
   t.test('guarda el valor', (t) => {

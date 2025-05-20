@@ -1,9 +1,10 @@
-import { ValueObject } from './ValueObject.ts';
+import {ValueObject} from './ValueObject.ts';
 
-const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 export class Password extends ValueObject<Password> {
   private readonly value: string;
+
   private constructor(value: string) {
     super();
     this.value = value;
