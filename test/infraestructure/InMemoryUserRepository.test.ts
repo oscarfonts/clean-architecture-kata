@@ -1,7 +1,7 @@
-import {describe, it} from 'node:test';
+import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import {User} from '../../src/domain/entities/User.ts';
-import {InMemoryUserRepository} from '../../src/infraestructure/InMemoryUserRepository.ts';
+import { User } from '../../src/domain/entities/User.ts';
+import { InMemoryUserRepository } from '../../src/infrastructure/InMemoryUserRepository.ts';
 
 describe('inMemoryUserRepository', () => {
   it('recupera un usuario añadido anteriormente por su email', () => {

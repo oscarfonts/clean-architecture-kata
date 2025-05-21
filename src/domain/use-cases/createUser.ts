@@ -1,10 +1,14 @@
-import {User} from '../entities/User.ts';
-import {UserRepository} from '../repositories/UserRepository.ts';
+import type { User } from "../entities/User.ts";
+import type { UserRepository } from "../repositories/UserRepository.ts";
 
-export function createUser({repository, user}: { repository: UserRepository, user: User }): User {
-  if (repository.getUserByEmail(user.getEmail())) {
-    throw new Error('An user with this email already exists');
-  }
+export type CreateUser = (user: User) => User;
 
-  return repository.createUser(user);
-}
+export const createUser =
+	({ repository }: { repository: UserRepository }): CreateUser =>
+	(user: User): User => {
+		if (repository.getUserByEmail(user.getEmail())) {
+			throw new Error("An user with this email already exists");
+		}
+
+		return repository.createUser(user);
+	};

@@ -1,6 +1,10 @@
-import {User} from '../entities/User.ts';
-import {UserRepository} from '../repositories/UserRepository.ts';
+import type { User } from "../entities/User.ts";
+import type { UserRepository } from "../repositories/UserRepository.ts";
 
-export function getUsers({repository}: { repository: UserRepository }): Array<User> {
-  return repository.getUsers();
-}
+export type GetUsers = () => Array<User>;
+
+export const getUsers =
+	({ repository }: { repository: UserRepository }) =>
+	(): Array<User> => {
+		return repository.getUsers();
+	};
